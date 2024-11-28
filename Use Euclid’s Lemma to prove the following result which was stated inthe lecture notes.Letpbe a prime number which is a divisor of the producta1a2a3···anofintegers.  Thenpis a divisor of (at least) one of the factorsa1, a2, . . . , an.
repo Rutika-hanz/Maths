@@ -1,0 +1,53 @@
+Euclid's Lemma is a very useful result in number theory. It states that:
+
+**If a prime \( p \) divides the product of two integers \( a \) and \( b \), then \( p \) must divide at least one of \( a \) or \( b \).**
+
+Formally:  
+If \( p \) is a prime number, and \( p \mid (a \times b) \), then \( p \mid a \) or \( p \mid b \).
+
+The problem you're referring to is an extension of Euclid's Lemma, which says:
+
+**If \( p \) divides the product \( a_1 \times a_2 \times \cdots \times a_n \) of integers, then \( p \) divides at least one of the factors \( a_1, a_2, \dots, a_n \).**
+
+### Steps to Prove the Result Using Euclid’s Lemma:
+
+1. **Start with the given assumption:**
+   Let \( p \) be a prime number such that \( p \mid a_1 a_2 \cdots a_n \). This means that the prime \( p \) divides the product of the integers \( a_1, a_2, \dots, a_n \).
+
+2. **Use induction to prove the result:**
+   The proof will be done by induction on \( n \), the number of factors in the product.
+
+   - **Base Case (n = 2):**  
+     We need to prove that if \( p \mid a_1 a_2 \), then \( p \mid a_1 \) or \( p \mid a_2 \).  
+     This is exactly Euclid's Lemma, so it is true by the lemma itself. Hence, the base case holds.
+
+   - **Inductive Hypothesis:**  
+     Assume that the statement is true for a product of \( n \) numbers. That is, if \( p \mid a_1 a_2 \cdots a_n \), then \( p \mid a_1 \) or \( p \mid a_2 \) or \( \cdots \) or \( p \mid a_n \). This is our assumption for the induction step.
+
+   - **Inductive Step (n = n + 1):**  
+     Now, we need to prove that if \( p \mid a_1 a_2 \cdots a_{n+1} \), then \( p \mid a_1 \) or \( p \mid a_2 \) or \( \cdots \) or \( p \mid a_{n+1} \).  
+     
+     We can group the factors into two parts:  
+     \[
+     a_1 a_2 \cdots a_{n+1} = (a_1 a_2 \cdots a_n) \times a_{n+1}
+     \]
+     From the inductive hypothesis, we know that if \( p \) divides the product \( a_1 a_2 \cdots a_n \), then \( p \) must divide at least one of the factors \( a_1, a_2, \dots, a_n \).  
+     Thus, if \( p \mid a_1 a_2 \cdots a_n \), then \( p \mid a_1 \) or \( p \mid a_2 \) or \( \cdots \) or \( p \mid a_n \).  
+     
+     If \( p \) divides \( a_{n+1} \), then the result is proven directly.  
+     
+     If \( p \) does not divide \( a_{n+1} \), then by Euclid's Lemma, since \( p \mid (a_1 a_2 \cdots a_n) \times a_{n+1} \), we must have that \( p \) divides the first part \( a_1 a_2 \cdots a_n \).  
+     
+     From the inductive hypothesis, this implies that \( p \) divides at least one of \( a_1, a_2, \dots, a_n \).  
+     
+     Thus, in both cases (whether \( p \mid a_{n+1} \) or not), we have that \( p \) divides at least one of the factors \( a_1, a_2, \dots, a_{n+1} \).
+
+3. **Conclusion:**  
+   By induction, we have shown that if \( p \mid a_1 a_2 \cdots a_n \), then \( p \) divides at least one of the factors \( a_1, a_2, \dots, a_n \). This completes the proof.
+
+### Summary of the Steps:
+- **Base Case**: Prove for \( n = 2 \) using Euclid's Lemma.
+- **Inductive Hypothesis**: Assume the statement holds for \( n \) factors.
+- **Inductive Step**: Prove the statement holds for \( n+1 \) factors by breaking the product into two parts and applying Euclid's Lemma.
+
+Thus, we have proven that if a prime \( p \) divides the product \( a_1 a_2 \cdots a_n \), then \( p \) divides at least one of \( a_1, a_2, \dots, a_n \).
