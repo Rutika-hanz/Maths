@@ -1,0 +1,152 @@
+### **Triangular Numbers**
+
+A triangular number represents the total number of objects in a triangle with \( n \) rows, where the first row has 1 object, the second row has 2 objects, and so on.
+
+#### **Formula for the \( n \)-th Triangular Number**
+The \( n \)-th triangular number, \( T_n \), is given by:
+\[
+T_n = \frac{n(n+1)}{2}
+\]
+
+---
+
+#### **Derivation of the Formula**
+The triangular number is the sum of the first \( n \) natural numbers:
+\[
+T_n = 1 + 2 + 3 + \cdots + n
+\]
+The sum of the first \( n \) integers is known to be:
+\[
+T_n = \frac{n(n+1)}{2}
+\]
+
+---
+
+#### **Examples**
+- \( T_1 = \frac{1(1+1)}{2} = 1 \)
+- \( T_2 = \frac{2(2+1)}{2} = 3 \)
+- \( T_3 = \frac{3(3+1)}{2} = 6 \)
+- \( T_4 = \frac{4(4+1)}{2} = 10 \)
+
+---
+
+### **Square Numbers**
+
+A square number represents the total number of objects that can fill a perfect square with \( n \times n \) dimensions.
+
+#### **Formula for the \( n \)-th Square Number**
+The \( n \)-th square number, \( S_n \), is given by:
+\[
+S_n = n^2
+\]
+
+---
+
+#### **Derivation of the Formula**
+The square number is simply the product of a number with itself:
+\[
+S_n = n \times n = n^2
+\]
+
+---
+
+#### **Examples**
+- \( S_1 = 1^2 = 1 \)
+- \( S_2 = 2^2 = 4 \)
+- \( S_3 = 3^2 = 9 \)
+- \( S_4 = 4^2 = 16 \)
+
+---
+
+### **Summary**
+1. **Triangular Numbers**:
+   \[
+   T_n = \frac{n(n+1)}{2}
+   \]
+2. **Square Numbers**:
+   \[
+   S_n = n^2
+   \]
+
+
+Let’s derive the formulas for **triangular numbers** and **square numbers** step by step.
+
+---
+
+### **1. Deriving the Formula for Triangular Numbers**
+
+#### Step 1: Understand the concept of triangular numbers
+Triangular numbers are the sum of the first \( n \) natural numbers:
+\[
+T_n = 1 + 2 + 3 + \dots + n
+\]
+
+#### Step 2: Write the sum in two ways
+Write the sum \( T_n = 1 + 2 + 3 + \dots + n \) in reverse order:
+\[
+T_n = n + (n-1) + (n-2) + \dots + 1
+\]
+
+Add the two expressions term by term:
+\[
+T_n + T_n = (1 + n) + (2 + (n-1)) + (3 + (n-2)) + \dots + (n + 1)
+\]
+
+Each pair of terms adds up to \( n + 1 \), and there are \( n \) pairs. So:
+\[
+2T_n = n(n+1)
+\]
+
+#### Step 3: Solve for \( T_n \)
+Divide both sides by 2:
+\[
+T_n = \frac{n(n+1)}{2}
+\]
+
+---
+
+#### Examples:
+1. \( T_1 = \frac{1(1+1)}{2} = \frac{2}{2} = 1 \)
+2. \( T_2 = \frac{2(2+1)}{2} = \frac{6}{2} = 3 \)
+3. \( T_3 = \frac{3(3+1)}{2} = \frac{12}{2} = 6 \)
+4. \( T_4 = \frac{4(4+1)}{2} = \frac{20}{2} = 10 \)
+
+---
+
+### **2. Deriving the Formula for Square Numbers**
+
+#### Step 1: Understand the concept of square numbers
+A square number is the product of a number with itself. For \( n \), it represents the area of a square with side length \( n \):
+\[
+S_n = n \times n
+\]
+
+#### Step 2: Write the formula
+The formula for the \( n \)-th square number is straightforward:
+\[
+S_n = n^2
+\]
+
+---
+
+#### Examples:
+1. \( S_1 = 1^2 = 1 \)
+2. \( S_2 = 2^2 = 4 \)
+3. \( S_3 = 3^2 = 9 \)
+4. \( S_4 = 4^2 = 16 \)
+
+---
+
+### **Summary of Formulas**
+
+1. **Triangular Numbers**:
+   \[
+   T_n = \frac{n(n+1)}{2}
+   \]
+   Derived from summing the first \( n \) natural numbers.
+
+2. **Square Numbers**:
+   \[
+   S_n = n^2
+   \]
+   Derived from the definition of squares.
