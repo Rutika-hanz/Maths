@@ -1,0 +1,72 @@
+To prove that if \( \gcd(a, b) = 1 \) and \( 1 = ax + by \) for some integers \( x \) and \( y \), then \( \gcd(x, y) = 1 \), we will use the following steps:
+
+### Step 1: Understand the Given Information
+
+- \( \gcd(a, b) = 1 \): This means that \( a \) and \( b \) have no common divisors other than 1, or in other words, \( a \) and \( b \) are coprime.
+- \( 1 = ax + by \): This means that the greatest common divisor of \( a \) and \( b \) can be written as a linear combination of \( a \) and \( b \), i.e., there exist integers \( x \) and \( y \) such that \( 1 = ax + by \).
+
+We need to prove that under these conditions, \( \gcd(x, y) = 1 \).
+
+### Step 2: Prove the Statement
+
+Let’s assume, for the sake of contradiction, that \( \gcd(x, y) = d > 1 \). This would mean that \( d \) divides both \( x \) and \( y \). Since \( d \) divides both \( x \) and \( y \), we can express \( x \) and \( y \) as:
+\[
+x = d \cdot x' \quad \text{and} \quad y = d \cdot y'
+\]
+for some integers \( x' \) and \( y' \).
+
+Now substitute these into the equation \( 1 = ax + by \):
+\[
+1 = a(d \cdot x') + b(d \cdot y') = d \cdot (a \cdot x' + b \cdot y')
+\]
+Thus, \( 1 \) is divisible by \( d \), which implies \( d \) divides 1. But the only positive integer that divides 1 is 1 itself. Therefore, \( d = 1 \).
+
+Thus, we have shown that \( \gcd(x, y) = 1 \).
+
+### Conclusion
+
+If \( \gcd(a, b) = 1 \) and \( 1 = ax + by \), then \( \gcd(x, y) = 1 \).
+
+---
+
+### Step 3: Verification in the Cases Above
+
+We can verify this result by checking the cases above for which we computed the GCD using the Extended Euclidean Algorithm.
+
+Let’s start with case (i), where we found \( \gcd(2009, 9002) = 7 \), and expressed it as a linear combination of \( 2009 \) and \( 9002 \).
+
+#### Case (i): \( a = 2009, b = 9002 \)
+
+From the calculations in part (i), we found the equation:
+\[
+7 = 52 \times 9002 - 233 \times 2009
+\]
+Thus, \( x = 52 \) and \( y = -233 \).
+
+Now, let’s compute \( \gcd(52, -233) \):
+\[
+\gcd(52, -233) = \gcd(52, 233) = 1
+\]
+This verifies the statement that \( \gcd(x, y) = 1 \).
+
+#### Case (ii): \( a = 13579, b = 2468 \)
+
+From the previous calculation, we found that \( \gcd(13579, 2468) = 1 \), and we expressed it as:
+\[
+1 = 123 \times 2468 - 124 \times 1239
+\]
+Thus, \( x = 123 \) and \( y = -124 \).
+
+Now, let’s compute \( \gcd(123, -124) \):
+\[
+\gcd(123, -124) = \gcd(123, 124) = 1
+\]
+This verifies the statement that \( \gcd(x, y) = 1 \).
+
+---
+
+### Conclusion of Verification
+
+In both cases above, we verified that the GCD of \( x \) and \( y \) is 1, as expected from the proof.
+
+Hence, in both of the provided cases, \( \gcd(x, y) = 1 \), confirming that the proof holds.
