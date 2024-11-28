@@ -1,0 +1,114 @@
+To solve for the greatest common divisor (GCD) of each pair of numbers, we will use the **Euclidean Algorithm** to find the GCD. Once we have the GCD, we will express it in the form \( ax + by \) using the **Extended Euclidean Algorithm**.
+
+Let's go through each pair step by step:
+
+---
+
+### (i) \( a = 2009 \) and \( b = 9002 \)
+
+#### Step 1: Use the Euclidean Algorithm to find the GCD.
+
+1. Divide \( b \) by \( a \):
+   \[
+   9002 \div 2009 = 4 \quad \text{(quotient)} \quad \text{remainder} = 9002 - 4 \times 2009 = 9002 - 8036 = 966
+   \]
+2. Next, divide \( 2009 \) by \( 966 \):
+   \[
+   2009 \div 966 = 2 \quad \text{(quotient)} \quad \text{remainder} = 2009 - 2 \times 966 = 2009 - 1932 = 77
+   \]
+3. Next, divide \( 966 \) by \( 77 \):
+   \[
+   966 \div 77 = 12 \quad \text{(quotient)} \quad \text{remainder} = 966 - 12 \times 77 = 966 - 924 = 42
+   \]
+4. Next, divide \( 77 \) by \( 42 \):
+   \[
+   77 \div 42 = 1 \quad \text{(quotient)} \quad \text{remainder} = 77 - 1 \times 42 = 77 - 42 = 35
+   \]
+5. Next, divide \( 42 \) by \( 35 \):
+   \[
+   42 \div 35 = 1 \quad \text{(quotient)} \quad \text{remainder} = 42 - 1 \times 35 = 42 - 35 = 7
+   \]
+6. Next, divide \( 35 \) by \( 7 \):
+   \[
+   35 \div 7 = 5 \quad \text{(quotient)} \quad \text{remainder} = 0
+   \]
+
+Thus, the GCD is \( 7 \).
+
+#### Step 2: Use the Extended Euclidean Algorithm to express GCD as \( ax + by \).
+
+Now we work backwards to express \( 7 \) as a linear combination of \( 2009 \) and \( 9002 \).
+
+- \( 7 = 42 - 1 \times 35 \)
+- \( 35 = 77 - 1 \times 42 \), so:
+  \[
+  7 = 42 - 1 \times (77 - 1 \times 42) = 2 \times 42 - 1 \times 77
+  \]
+- \( 42 = 966 - 12 \times 77 \), so:
+  \[
+  7 = 2 \times (966 - 12 \times 77) - 1 \times 77 = 2 \times 966 - 25 \times 77
+  \]
+- \( 77 = 2009 - 2 \times 966 \), so:
+  \[
+  7 = 2 \times 966 - 25 \times (2009 - 2 \times 966) = 52 \times 966 - 25 \times 2009
+  \]
+- \( 966 = 9002 - 4 \times 2009 \), so:
+  \[
+  7 = 52 \times (9002 - 4 \times 2009) - 25 \times 2009 = 52 \times 9002 - 233 \times 2009
+  \]
+
+Thus, the GCD of \( 2009 \) and \( 9002 \) is \( 7 \), and the linear combination is:
+\[
+7 = 52 \times 9002 - 233 \times 2009
+\]
+
+---
+
+### (ii) \( a = 13579 \) and \( b = 2468 \)
+
+#### Step 1: Use the Euclidean Algorithm.
+
+1. Divide \( 13579 \) by \( 2468 \):
+   \[
+   13579 \div 2468 = 5 \quad \text{(quotient)} \quad \text{remainder} = 13579 - 5 \times 2468 = 13579 - 12340 = 1239
+   \]
+2. Divide \( 2468 \) by \( 1239 \):
+   \[
+   2468 \div 1239 = 1 \quad \text{(quotient)} \quad \text{remainder} = 2468 - 1 \times 1239 = 2468 - 1239 = 1229
+   \]
+3. Divide \( 1239 \) by \( 1229 \):
+   \[
+   1239 \div 1229 = 1 \quad \text{(quotient)} \quad \text{remainder} = 1239 - 1 \times 1229 = 1239 - 1229 = 10
+   \]
+4. Divide \( 1229 \) by \( 10 \):
+   \[
+   1229 \div 10 = 122 \quad \text{(quotient)} \quad \text{remainder} = 1229 - 122 \times 10 = 1229 - 1220 = 9
+   \]
+5. Divide \( 10 \) by \( 9 \):
+   \[
+   10 \div 9 = 1 \quad \text{(quotient)} \quad \text{remainder} = 10 - 1 \times 9 = 10 - 9 = 1
+   \]
+6. Divide \( 9 \) by \( 1 \):
+   \[
+   9 \div 1 = 9 \quad \text{(quotient)} \quad \text{remainder} = 0
+   \]
+
+Thus, the GCD is \( 1 \).
+
+#### Step 2: Express GCD as \( ax + by \).
+
+We now work backwards to express \( 1 \) as a linear combination of \( 13579 \) and \( 2468 \).
+
+- \( 1 = 10 - 1 \times 9 \)
+- \( 9 = 1229 - 122 \times 10 \), so:
+  \[
+  1 = 10 - 1 \times (1229 - 122 \times 10) = 123 \times 10 - 1 \times 1229
+  \]
+- \( 10 = 1239 - 1 \times 1229 \), so:
+  \[
+  1 = 123 \times (1239 - 1 \times 1229) - 1 \times 1229 = 123 \times 1239 - 124 \times 1229
+  \]
+- \( 1239 = 2468 - 1 \times 1239 \), so:
+  \[
+  1 = 123 \times (2468 - 1 \times 1239) - 124 \times 1229 = 123 \times 2468 - 247 \times 1239
+  \]
