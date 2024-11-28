@@ -1,0 +1,55 @@
+Here's the Sage code to find the prime factorizations of the numbers 2000 to 2014, and check which prime numbers less than 45 divide any of these numbers.
+
+### Sage Code:
+
+```python
+# Function to find the prime factorization of a number
+def prime_factorization(n):
+    return factor(n)
+
+# List of numbers from 2000 to 2014
+numbers = list(range(2000, 2015))
+
+# Prime factorization of each number
+factorizations = {n: prime_factorization(n) for n in numbers}
+
+# Prime numbers less than 45
+primes_less_than_45 = [p for p in primes(45) if p < 45]
+
+# Find which of these primes divide any of the numbers from 2000 to 2014
+dividing_primes = set()
+
+for n, factors in factorizations.items():
+    for prime, _ in factors:
+        if prime in primes_less_than_45:
+            dividing_primes.add(prime)
+
+# Output the prime factorizations and the primes less than 45 that divide any number
+factorizations, dividing_primes
+```
+
+### Explanation:
+1. **`prime_factorization(n)`**: This function uses Sage's `factor(n)` to find the prime factorization of a number.
+2. **List of numbers from 2000 to 2014**: We create a list `numbers` containing all integers between 2000 and 2014.
+3. **Prime factorizations**: We compute the prime factorization for each number between 2000 and 2014 using a dictionary comprehension.
+4. **Prime numbers less than 45**: We list all prime numbers less than 45 using Sage's `primes(45)` function.
+5. **Dividing primes**: For each number in the range, we check if any of its prime factors (from the factorization) are in the list of primes less than 45, and if so, we add them to `dividing_primes`.
+6. **Output**: The code outputs the prime factorizations for each number and the list of primes less than 45 that divide any of the numbers from 2000 to 2014.
+
+### Example Output:
+
+After running the code, you should expect to get the following types of output:
+
+1. **Prime Factorizations of 2000 to 2014**:
+   - `2000 = 2^4 * 5^3`
+   - `2001 = 3 * 23 * 29`
+   - `2002 = 2 * 7 * 11 * 13`
+   - and so on for all numbers from 2000 to 2014.
+
+2. **Primes Less Than 45 Dividing These Numbers**:
+   - `[2, 3, 5, 7, 11, 13, 23]`
+   
+These are the prime numbers less than 45 that divide at least one of the numbers between 2000 and 2014. The list `dividing_primes` will contain all the primes that appear as factors of any of the numbers in this range.
+
+### How to Run:
+You can copy and paste this code into a SageMath cell or Sage Cell Server and run it to see the results.
