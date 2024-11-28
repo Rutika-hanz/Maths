@@ -1,0 +1,12 @@
+#a^2+b^2+c^2+d^2=n
+
+counter=0
+
+for a in range(100):
+    for b in range(a+1):
+        for c in range(b+1):
+            for d in range(c+1):
+                if a^2+b^2+c^2+d^2==2012:
+                    print(a,b,c,d)
+                    counter=counter+1
+print(counter)

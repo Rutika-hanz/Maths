@@ -1,0 +1,14 @@
+#Lab 1.2
+x=0
+y=1
+sum=0
+n=10
+for i in range(2,n):
+        sum=2*y+x
+        x=y
+        #print(sum)
+        y=sum
+        a=y^2-x^2
+        b=2*x*y
+        c=x^2+y^2
+        print(x,y,'a=',a,'b=',b,'c=',c,'diff=',a-b)

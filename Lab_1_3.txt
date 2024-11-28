@@ -1,0 +1,11 @@
+#Sarthak's solution
+
+#a>=b
+#c=85
+
+#for loop?
+
+for b in range(85):
+    for a in range(b):
+        if a^2+b^2==85^2:
+            print(a,b)

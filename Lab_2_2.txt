@@ -1,0 +1,12 @@
+primes_to_45=prime_range(2,45)
+print(primes_to_45)
+#factorize all numbers from 2000 to 2014
+#collect their prime factors in one list
+#tidy the list up
+list1=[]
+list2= range(2000,2015)
+for j in list2:
+    for i in primes_to_45:
+        if j%i==0:
+            list1.append(i)
+factors=list(set(list1))
