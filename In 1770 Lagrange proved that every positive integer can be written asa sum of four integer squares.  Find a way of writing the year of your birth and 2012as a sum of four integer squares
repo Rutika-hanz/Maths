@@ -1,0 +1,77 @@
+To understand how the four numbers \( a, b, c, d \) were chosen using **Legendre's Four-Square Method**, let’s work through the example \( n = 2012 \) step by step. 
+
+---
+
+### Legendre's Method Overview
+1. **Find the largest square \( a^2 \) less than or equal to \( n \).**
+   - Start with \( a = \lfloor \sqrt{n} \rfloor \) (the largest integer \( a \) such that \( a^2 \leq n \)).
+
+2. **Subtract \( a^2 \) from \( n \) to get the remainder \( r_1 \).**
+   - Set \( r_1 = n - a^2 \).
+
+3. **Repeat the process for the remainder \( r_1 \), finding the largest square \( b^2 \) such that \( b^2 \leq r_1 \).**
+
+4. **Continue until \( r_3 = c^2 + d^2 \).**
+   - This ensures \( n = a^2 + b^2 + c^2 + d^2 \).
+
+---
+
+### Example: \( n = 2012 \)
+#### Step 1: Find \( a^2 \)
+- Compute \( a = \lfloor \sqrt{2012} \rfloor = 44 \).
+- \( a^2 = 44^2 = 1936 \).
+- Compute the remainder:
+  \[
+  r_1 = 2012 - 1936 = 76
+  \]
+
+#### Step 2: Find \( b^2 \)
+- Compute \( b = \lfloor \sqrt{76} \rfloor = 6 \).
+- \( b^2 = 6^2 = 36 \).
+- Compute the new remainder:
+  \[
+  r_2 = 76 - 36 = 40
+  \]
+
+#### Step 3: Find \( c^2 \)
+- Compute \( c = \lfloor \sqrt{40} \rfloor = 4 \).
+- \( c^2 = 4^2 = 16 \).
+- Compute the new remainder:
+  \[
+  r_3 = 40 - 16 = 24
+  \]
+
+#### Step 4: Find \( d^2 \)
+- Compute \( d = \lfloor \sqrt{24} \rfloor = 2 \).
+- \( d^2 = 2^2 = 4 \).
+- Verify:
+  \[
+  r_4 = 24 - 4 = 0
+  \]
+
+---
+
+### Final Result
+Using Legendre's method, we decompose \( 2012 \) as:
+\[
+2012 = 44^2 + 6^2 + 4^2 + 2^2
+\]
+
+- \( 44^2 = 1936 \),
+- \( 6^2 = 36 \),
+- \( 4^2 = 16 \),
+- \( 2^2 = 4 \).
+
+Adding them up:
+\[
+2012 = 1936 + 36 + 16 + 4
+\]
+
+---
+
+### Summary of Steps
+1. Start with the largest square less than \( n \).
+2. Subtract that square from \( n \).
+3. Repeat for the remainder until you have four squares.
+
+This systematic method ensures all integers can be expressed as the sum of four squares as per Lagrange's theorem.
