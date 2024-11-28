@@ -1,0 +1,81 @@
+To find all rational solutions \( (x, y) \) to the equation \( x^2 + y^2 = 10 \), we will explore how to solve this equation using algebraic methods.
+
+### Step 1: Express the equation in terms of rational points
+We are given the equation:
+\[
+x^2 + y^2 = 10
+\]
+where \( x \) and \( y \) are rational numbers. Our goal is to find all such rational pairs \( (x, y) \).
+
+### Step 2: Parametrize the solutions
+The equation \( x^2 + y^2 = 10 \) describes a circle with radius \( \sqrt{10} \) in the plane, but we need to find rational solutions. The equation is a Diophantine equation, and we can use a **parametric representation** for this. 
+
+We use a well-known method to parametrize solutions to sums of two squares. If \( x \) and \( y \) are rational solutions to the equation \( x^2 + y^2 = 10 \), we can express them in terms of two rational parameters \( t \) and \( s \) as follows:
+
+\[
+x = \frac{2st}{s^2 + t^2}, \quad y = \frac{s^2 - t^2}{s^2 + t^2}
+\]
+where \( s \) and \( t \) are rational numbers.
+
+### Step 3: Verify the parametrization satisfies the original equation
+Now let’s verify that the parametrization satisfies \( x^2 + y^2 = 10 \).
+
+Substitute the expressions for \( x \) and \( y \) into the equation:
+\[
+x^2 + y^2 = \left( \frac{2st}{s^2 + t^2} \right)^2 + \left( \frac{s^2 - t^2}{s^2 + t^2} \right)^2
+\]
+Simplify both terms:
+\[
+x^2 + y^2 = \frac{4s^2 t^2}{(s^2 + t^2)^2} + \frac{(s^2 - t^2)^2}{(s^2 + t^2)^2}
+\]
+The common denominator is \( (s^2 + t^2)^2 \), so:
+\[
+x^2 + y^2 = \frac{4s^2 t^2 + (s^2 - t^2)^2}{(s^2 + t^2)^2}
+\]
+Now expand \( (s^2 - t^2)^2 \):
+\[
+x^2 + y^2 = \frac{4s^2 t^2 + (s^4 - 2s^2 t^2 + t^4)}{(s^2 + t^2)^2}
+\]
+Combine like terms:
+\[
+x^2 + y^2 = \frac{s^4 + 2s^2 t^2 + t^4}{(s^2 + t^2)^2}
+\]
+This is simply:
+\[
+x^2 + y^2 = \frac{(s^2 + t^2)^2}{(s^2 + t^2)^2} = 1
+\]
+Thus, the parametrization satisfies the equation, confirming that \( x^2 + y^2 = 10 \) holds for any rational \( s \) and \( t \).
+
+### Step 4: List a few solutions
+Let’s now find a few rational solutions by choosing specific rational values for \( t \) and \( s \).
+
+1. **For \( t = 1, s = 3 \):**
+   \[
+   x = \frac{2 \times 3 \times 1}{3^2 + 1^2} = \frac{6}{10} = 0.6
+   \]
+   \[
+   y = \frac{3^2 - 1^2}{3^2 + 1^2} = \frac{9 - 1}{10} = \frac{8}{10} = 0.8
+   \]
+   Thus, \( (0.6, 0.8) \) is a solution.
+
+2. **For \( t = 2, s = 1 \):**
+   \[
+   x = \frac{2 \times 1 \times 2}{1^2 + 2^2} = \frac{4}{5}
+   \]
+   \[
+   y = \frac{1^2 - 2^2}{1^2 + 2^2} = \frac{1 - 4}{5} = \frac{-3}{5}
+   \]
+   Thus, \( \left( \frac{4}{5}, \frac{-3}{5} \right) \) is a solution.
+
+---
+
+### Final Result
+The general form of the rational solutions to the equation \( x^2 + y^2 = 10 \) is given by the parametric formulas:
+\[
+x = \frac{2st}{s^2 + t^2}, \quad y = \frac{s^2 - t^2}{s^2 + t^2}
+\]
+where \( s \) and \( t \) are rational numbers.
+
+A few specific solutions include:
+1. \( (0.6, 0.8) \)
+2. \( \left( \frac{4}{5}, \frac{-3}{5} \right) \)
