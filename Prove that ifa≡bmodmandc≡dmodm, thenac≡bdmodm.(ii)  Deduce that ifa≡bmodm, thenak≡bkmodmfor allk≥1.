@@ -1,0 +1,82 @@
+### Proof of \( (i) \): If \( a \equiv b \pmod{m} \) and \( c \equiv d \pmod{m} \), then \( ac \equiv bd \pmod{m} \).
+
+#### Step-by-Step Proof:
+
+1. **Given**:
+   - \( a \equiv b \pmod{m} \), which means \( m \mid (a - b) \), i.e., \( a - b = km \) for some integer \( k \).
+   - \( c \equiv d \pmod{m} \), which means \( m \mid (c - d) \), i.e., \( c - d = lm \) for some integer \( l \).
+
+2. **We need to prove**: \( ac \equiv bd \pmod{m} \), i.e., we need to show that \( m \mid (ac - bd) \).
+
+3. **Start with the expression**:
+   \[
+   ac - bd = (a - b)c + b(c - d)
+   \]
+   
+4. **Substitute \( a - b = km \) and \( c - d = lm \)** from the given conditions:
+   \[
+   ac - bd = (km)c + b(lm)
+   \]
+   \[
+   ac - bd = kmc + blm
+   \]
+
+5. **Factor out \( m \)** from both terms:
+   \[
+   ac - bd = m(kc + bl)
+   \]
+
+6. Since \( m \) divides the expression \( ac - bd \) (because it's factored out), we conclude:
+   \[
+   ac \equiv bd \pmod{m}
+   \]
+
+Thus, we have proven that if \( a \equiv b \pmod{m} \) and \( c \equiv d \pmod{m} \), then \( ac \equiv bd \pmod{m} \).
+
+---
+
+### Proof of \( (ii) \): If \( a \equiv b \pmod{m} \), then \( a^k \equiv b^k \pmod{m} \) for all \( k \geq 1 \).
+
+#### Step-by-Step Proof:
+
+1. **Given**: 
+   - \( a \equiv b \pmod{m} \), which means \( m \mid (a - b) \), i.e., \( a - b = km \) for some integer \( k \).
+
+2. **Base case** \( k = 1 \): 
+   - We know that \( a \equiv b \pmod{m} \) by the given assumption.
+
+3. **Inductive Step**:
+   - Assume the result holds for some \( k = n \), i.e., \( a^n \equiv b^n \pmod{m} \).
+
+   - Now, we need to prove that \( a^{n+1} \equiv b^{n+1} \pmod{m} \).
+   
+4. **Start with** \( a^{n+1} - b^{n+1} \):
+   \[
+   a^{n+1} - b^{n+1} = a^n \cdot a - b^n \cdot b
+   \]
+   \[
+   a^{n+1} - b^{n+1} = a^n (a - b) + (a^n - b^n) \cdot b
+   \]
+
+5. **Use the inductive hypothesis** \( a^n \equiv b^n \pmod{m} \), which gives \( a^n - b^n = m \cdot p \) for some integer \( p \).
+
+   So we now have:
+   \[
+   a^{n+1} - b^{n+1} = a^n (a - b) + m \cdot p \cdot b
+   \]
+   Since \( a \equiv b \pmod{m} \), we also have \( a - b = m \cdot q \) for some integer \( q \), so:
+   \[
+   a^{n+1} - b^{n+1} = m \cdot q \cdot a^n + m \cdot p \cdot b
+   \]
+   \[
+   a^{n+1} - b^{n+1} = m \cdot (q \cdot a^n + p \cdot b)
+   \]
+
+6. Since the right-hand side is divisible by \( m \), we conclude:
+   \[
+   a^{n+1} \equiv b^{n+1} \pmod{m}
+   \]
+
+7. **Conclusion**: By induction, we have shown that if \( a \equiv b \pmod{m} \), then \( a^k \equiv b^k \pmod{m} \) for all \( k \geq 1 \).
+
+Thus, the result is proven.
