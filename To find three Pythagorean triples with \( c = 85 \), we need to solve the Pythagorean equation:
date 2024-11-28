@@ -1,0 +1,25 @@
+To find three Pythagorean triples with \( c = 85 \), we need to solve the Pythagorean equation:
+
+\[
+a^2 + b^2 = c^2
+\]
+
+### Step 1: Use the Pythagorean Triple Formula
+A primitive Pythagorean triple can be generated using:
+\[
+a = m^2 - n^2, \quad b = 2mn, \quad c = m^2 + n^2
+\]
+where:
+- \( m > n > 0 \),
+- \( m \) and \( n \) are coprime,
+- \( m - n \) is odd.
+
+### Step 2: Solve for \( c = 85 \)
+Here, \( c = m^2 + n^2 = 85 \). We solve for integer values of \( m \) and \( n \) such that \( m^2 + n^2 = 85 \).
+
+1. Start with \( m = 9 \) and \( n = 2 \) because \( 9^2 + 2^2 = 81 + 4 = 85 \).
+    - \( a = m^2 - n^2 = 81 - 4 = 77 \),
+    - \( b = 2mn = 2 \cdot 9 \cdot 2 = 36 \).
+    - Triple: \( (a, b, c) = (77, 36, 85) \).
+
+2. \( m = 7 \) and \( n = 6 \) satisfy \( m^2 + n^ c
