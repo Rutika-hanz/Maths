@@ -1,0 +1,56 @@
+Here are the steps to solve each of the modular arithmetic problems:
+
+### (i) \( 201416 \mod 17 \)
+
+1. **Divide 201416 by 17**:
+   \[
+   \frac{201416}{17} = 11847 \text{ remainder } 0
+   \]
+   This means that 201416 is divisible by 17 with no remainder.
+
+2. **Conclusion**:
+   Since the remainder is 0, we can conclude that:
+   \[
+   201416 \mod 17 = 0
+   \]
+
+---
+
+### (ii) \( 57102 \mod 101 \)
+
+1. **Divide 57102 by 101**:
+   \[
+   \frac{57102}{101} = 565 \text{ remainder } 37
+   \]
+   This means that 57102 divided by 101 gives a quotient of 565 and a remainder of 37.
+
+2. **Conclusion**:
+   The remainder is 37, so:
+   \[
+   57102 \mod 101 = 37
+   \]
+
+---
+
+### (iii) \( 2600 \mod 199 \)
+
+1. **Divide 2600 by 199**:
+   \[
+   \frac{2600}{199} = 13 \text{ remainder } 13
+   \]
+   This means that 2600 divided by 199 gives a quotient of 13 and a remainder of 13.
+
+2. **Conclusion**:
+   The remainder is 13, so:
+   \[
+   2600 \mod 199 = 13
+   \]
+
+---
+
+### Summary of Results:
+- \( 201416 \mod 17 = 0 \)
+- \( 57102 \mod 101 = 37 \)
+- \( 2600 \mod 199 = 13 \)
+
+In general, to find the remainder when dividing by a modulus, you simply perform the division and take the remainder from the quotient. This remainder is the result of the modulus operation.
