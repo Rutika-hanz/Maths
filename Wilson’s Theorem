@@ -1,0 +1,92 @@
+### Verifying Wilson's Theorem for \( n = 2, 3, 4, \dots, 10 \)
+
+**Wilson’s Theorem** states:
+
+\[
+n \text{ is prime if and only if } (n-1)! \equiv -1 \pmod{n}.
+\]
+
+This means that for a prime number \( n \), the factorial of \( n-1 \) modulo \( n \) should equal \( -1 \) (or \( n-1 \) in modulo \( n \)).
+
+For composite \( n \), this equivalence does not hold. Let’s verify this for \( n = 2, 3, \dots, 10 \).
+
+---
+
+### Steps for Verification:
+
+1. **Compute \( (n-1)! \mod n \) for \( n = 2, 3, \dots, 10 \).**
+2. Check whether the result is \( -1 \mod n \) (or \( n-1 \mod n \)) for primes.
+3. Note that for composite \( n \), \( (n-1)! \not\equiv -1 \mod n \).
+
+---
+
+### Case-by-Case Verification:
+
+#### **\( n = 2 \):**
+- \( (n-1)! = 1! = 1 \).
+- \( 1 \mod 2 = 1 \equiv -1 \mod 2 \).
+- \( n = 2 \) is prime, so the theorem holds.
+
+#### **\( n = 3 \):**
+- \( (n-1)! = 2! = 2 \).
+- \( 2 \mod 3 = 2 \equiv -1 \mod 3 \).
+- \( n = 3 \) is prime, so the theorem holds.
+
+#### **\( n = 4 \):**
+- \( (n-1)! = 3! = 6 \).
+- \( 6 \mod 4 = 2 \neq -1 \mod 4 \).
+- \( n = 4 \) is composite, so the theorem holds.
+
+#### **\( n = 5 \):**
+- \( (n-1)! = 4! = 24 \).
+- \( 24 \mod 5 = 4 \equiv -1 \mod 5 \).
+- \( n = 5 \) is prime, so the theorem holds.
+
+#### **\( n = 6 \):**
+- \( (n-1)! = 5! = 120 \).
+- \( 120 \mod 6 = 0 \neq -1 \mod 6 \).
+- \( n = 6 \) is composite, so the theorem holds.
+
+#### **\( n = 7 \):**
+- \( (n-1)! = 6! = 720 \).
+- \( 720 \mod 7 = 6 \equiv -1 \mod 7 \).
+- \( n = 7 \) is prime, so the theorem holds.
+
+#### **\( n = 8 \):**
+- \( (n-1)! = 7! = 5040 \).
+- \( 5040 \mod 8 = 0 \neq -1 \mod 8 \).
+- \( n = 8 \) is composite, so the theorem holds.
+
+#### **\( n = 9 \):**
+- \( (n-1)! = 8! = 40320 \).
+- \( 40320 \mod 9 = 0 \neq -1 \mod 9 \).
+- \( n = 9 \) is composite, so the theorem holds.
+
+#### **\( n = 10 \):**
+- \( (n-1)! = 9! = 362880 \).
+- \( 362880 \mod 10 = 0 \neq -1 \mod 10 \).
+- \( n = 10 \) is composite, so the theorem holds.
+
+---
+
+### Conclusion from Verification:
+
+- Wilson's Theorem holds for all cases \( n = 2, 3, \dots, 10 \).
+- For primes, \( (n-1)! \equiv -1 \mod n \).
+- For composites, \( (n-1)! \not\equiv -1 \mod n \).
+
+---
+
+### Efficiency of Wilson's Theorem as a Primality Test:
+
+Wilson's Theorem provides a **mathematically accurate way** to test primality, but it is **not computationally efficient** because:
+
+1. Computing \( (n-1)! \) involves \( n-1 \) multiplications, which grow rapidly for large \( n \) (factorial growth is faster than exponential).
+2. Modular reduction can help, but for large \( n \), this remains computationally expensive.
+
+For practical purposes, more efficient primality tests exist, such as:
+- The **Sieve of Eratosthenes** for small \( n \),
+- **Fermat’s Little Theorem**-based tests,
+- **Miller-Rabin primality test** for larger numbers.
+
+Hence, Wilson's Theorem is more of a theoretical result than a practical primality test.
