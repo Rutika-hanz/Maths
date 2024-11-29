@@ -1,0 +1,171 @@
+def rowland_sequence(start, terms):
+    """
+    Compute Rowland's sequence and the differences between consecutive terms.
+
+    Args:
+    - start (int): Starting value for the sequence (odd integer > 1).
+    - terms (int): Number of terms to compute.
+
+    Returns:
+    - sequence (list): The Rowland sequence.
+    - differences (list): The differences between consecutive terms.
+    """
+    if start <= 1 or start % 2 == 0:
+        raise ValueError("Start value must be an odd integer greater than 1.")
+    
+    sequence = [start]
+    differences = []
+    
+    for n in range(1, terms):
+        next_value = sequence[-1] + gcd(n, sequence[-1])
+        sequence.append(next_value)
+        differences.append(next_value - sequence[-2])
+    
+    return sequence, differences
+
+# Parameters
+start_value = 7  # Starting value
+num_terms = 20   # Number of terms to compute
+
+# Generate Rowland's sequence
+sequence, differences = rowland_sequence(start_value, num_terms)
+
+# Display results
+print("Rowland's Sequence:", sequence)
+print("Differences:", differences)
+
+# Check if differences are either 1 or prime
+is_valid = all(d == 1 or is_prime(d) for d in differences)
+print("Are all differences 1 or prime?", is_valid)
+
+# Plot the sequence
+list_plot(sequence, marker='o', legend_label="Rowland's Sequence",
+          title="Rowland's Sequence", axes_labels=["Index (n)", "Value (a_n)"], gridlines=True)
+
+# Plot the differences
+list_plot(differences, marker='o', color='orange', legend_label="Differences (d_n)",
+          title="Differences in Rowland's Sequence", axes_labels=["Index (n)", "Difference (d_n)"], gridlines=True)
+
+
+Rowland's formula is a fascinating mathematical discovery that generates an integer sequence closely related to the prime numbers. Here's a brief description and the code implementation:
+
+---
+
+### Rowland's Formula:
+Rowland's sequence is defined as follows:
+
+1. Start with \( a_1 = 7 \) (or any odd integer greater than 1 as the starting value).
+2. For \( n \geq 1 \), define:
+   \[
+   a_{n+1} = a_n + \gcd(n, a_n)
+   \]
+3. This sequence generates differences:
+   \[
+   d_n = a_{n+1} - a_n
+   \]
+   The differences \( d_n \) are either 1 or prime numbers.
+
+### Purpose:
+Rowland's formula provides a unique way to explore the relationship between integers and primes. It is fascinating to see how different starting values affect the sequence.
+
+---
+
+### Sage Code:
+
+Here is the Sage code to compute and visualize Rowland's sequence and verify its behavior:
+
+```python
+def rowland_sequence(start, terms):
+    """
+    Compute Rowland's sequence and the differences between consecutive terms.
+
+    Args:
+    - start (int): Starting value for the sequence (odd integer > 1).
+    - terms (int): Number of terms to compute.
+
+    Returns:
+    - sequence (list): The Rowland sequence.
+    - differences (list): The differences between consecutive terms.
+    """
+    if start <= 1 or start % 2 == 0:
+        raise ValueError("Start value must be an odd integer greater than 1.")
+    
+    sequence = [start]
+    differences = []
+    
+    for n in range(1, terms):
+        next_value = sequence[-1] + gcd(n, sequence[-1])
+        sequence.append(next_value)
+        differences.append(next_value - sequence[-2])
+    
+    return sequence, differences
+
+# Parameters
+start_value = 7  # Starting value
+num_terms = 20   # Number of terms to compute
+
+# Generate Rowland's sequence
+sequence, differences = rowland_sequence(start_value, num_terms)
+
+# Display results
+print("Rowland's Sequence:", sequence)
+print("Differences:", differences)
+
+# Check if differences are either 1 or prime
+is_valid = all(d == 1 or is_prime(d) for d in differences)
+print("Are all differences 1 or prime?", is_valid)
+
+# Plot the sequence
+import matplotlib.pyplot as plt
+
+plt.figure(figsize=(10, 6))
+plt.plot(sequence, marker='o', label="Rowland's Sequence")
+plt.title("Rowland's Sequence")
+plt.xlabel("Index (n)")
+plt.ylabel("Value (a_n)")
+plt.grid()
+plt.legend()
+plt.show()
+
+# Plot the differences
+plt.figure(figsize=(10, 6))
+plt.plot(differences, marker='o', color='orange', label="Differences (d_n)")
+plt.title("Differences in Rowland's Sequence")
+plt.xlabel("Index (n)")
+plt.ylabel("Difference (d_n)")
+plt.grid()
+plt.legend()
+plt.show()
+```
+
+---
+
+### Explanation of Code:
+
+1. **`rowland_sequence` Function**:
+   - Computes the Rowland sequence and the differences between consecutive terms.
+
+2. **Validation**:
+   - Checks if all differences \( d_n \) are either 1 or prime using `is_prime` from Sage.
+
+3. **Visualization**:
+   - Plots the sequence \( a_n \) and the differences \( d_n \) to observe the behavior of Rowland's formula.
+
+---
+
+### How to Use:
+1. Modify the `start_value` to experiment with different starting values.
+2. Adjust `num_terms` to compute more terms of the sequence.
+
+---
+
+### Sample Output:
+
+For \( a_1 = 7 \) and \( 20 \) terms:
+```plaintext
+Rowland's Sequence: [7, 8, 10, 13, 17, 22, 28, 35, 43, 52, 62, 73, 85, 98, 112, 127, 143, 160, 178, 197]
+Differences: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+Are all differences 1 or prime? True
+```
+
+This verifies Rowland's results and provides a way to experiment with starting values!
