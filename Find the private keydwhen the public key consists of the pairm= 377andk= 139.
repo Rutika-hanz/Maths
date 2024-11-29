@@ -1,0 +1,68 @@
+To find the private key \( d \) when given the public key \( (m, k) = (377, 139) \), we are working within an **RSA** cryptosystem. The public key consists of \( m \) (the modulus) and \( k \) (the public exponent), while the private key \( d \) satisfies the congruence:
+
+\[
+d \cdot k \equiv 1 \mod \varphi(m)
+\]
+
+where \( \varphi(m) \) is the Euler's Totient Function of \( m \).
+
+### Step 1: Find \( \varphi(m) \)
+
+The modulus \( m = 377 \) is the product of two prime numbers, so we need to factorize 377. First, find the prime factorization of 377.
+
+- \( 377 = 13 \times 29 \), where both 13 and 29 are primes.
+
+Now, compute \( \varphi(377) \). Using the formula for Euler's Totient Function for \( m = p \times q \), where \( p \) and \( q \) are distinct primes:
+
+\[
+\varphi(m) = \varphi(13 \times 29) = (13 - 1) \times (29 - 1) = 12 \times 28 = 336
+\]
+
+So, \( \varphi(377) = 336 \).
+
+### Step 2: Solve for \( d \)
+
+We need to find the integer \( d \) such that:
+
+\[
+d \cdot k \equiv 1 \mod \varphi(m)
+\]
+
+Substituting the values \( k = 139 \) and \( \varphi(m) = 336 \), we need to solve:
+
+\[
+d \cdot 139 \equiv 1 \mod 336
+\]
+
+This can be done using the **Extended Euclidean Algorithm** to find the modular inverse of 139 modulo 336.
+
+#### Step 2.1: Apply the Extended Euclidean Algorithm
+
+We apply the Euclidean algorithm to 139 and 336 to find the greatest common divisor (gcd) and work backward to express 1 as a linear combination of 139 and 336.
+
+1. \( 336 = 2 \times 139 + 58 \)
+2. \( 139 = 2 \times 58 + 23 \)
+3. \( 58 = 2 \times 23 + 12 \)
+4. \( 23 = 1 \times 12 + 11 \)
+5. \( 12 = 1 \times 11 + 1 \)
+6. \( 11 = 11 \times 1 + 0 \)
+
+Now, work backward to express 1 as a combination of 139 and 336:
+
+1. \( 1 = 12 - 1 \times 11 \)
+2. \( 1 = 12 - 1 \times (23 - 1 \times 12) = 2 \times 12 - 1 \times 23 \)
+3. \( 1 = 2 \times (58 - 2 \times 23) - 1 \times 23 = 2 \times 58 - 5 \times 23 \)
+4. \( 1 = 2 \times 58 - 5 \times (139 - 2 \times 58) = 12 \times 58 - 5 \times 139 \)
+5. \( 1 = 12 \times (336 - 2 \times 139) - 5 \times 139 = 12 \times 336 - 29 \times 139 \)
+
+So, \( 1 = 12 \times 336 - 29 \times 139 \).
+
+Thus, the inverse of 139 modulo 336 is \( -29 \), and since we want a positive value for \( d \), we add 336 to \( -29 \) to get:
+
+\[
+d \equiv 336 - 29 = 307 \mod 336
+\]
+
+### Step 3: Conclusion
+
+Therefore, the private key \( d \) is \( \boxed{307} \).
