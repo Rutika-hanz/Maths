@@ -1,0 +1,8 @@
+# Function to find the prime factorization of a number
+def prime_factorization(n):
+    return factor(n)
+
+# Test with a number, for example, 1001
+n = 1001
+prime_factors = prime_factorization(n)
+prime_factors
