@@ -1,0 +1,107 @@
+To solve these problems, we can use the **method of solving linear congruences**. The key idea here is to use **modular arithmetic** and find the smallest \( n \) that satisfies each of the congruences.
+
+We'll use **the extended Euclidean algorithm** or trial and error in some cases to solve these congruences.
+
+### Part (i): \( n \cdot 17 \equiv 10 \mod 29 \)
+
+We want to solve for \( n \) such that \( 17n \equiv 10 \mod 29 \).
+
+**Step 1: Find the inverse of 17 modulo 29.**
+
+To solve \( 17n \equiv 10 \mod 29 \), we first need to find the multiplicative inverse of 17 modulo 29. This can be done using the **extended Euclidean algorithm**.
+
+We want to find \( x \) such that:
+\[
+17x \equiv 1 \mod 29
+\]
+
+We use the Euclidean algorithm to find the gcd of 17 and 29 and then work backward to express 1 as a linear combination of 17 and 29.
+
+1. \( 29 = 1 \times 17 + 12 \)
+2. \( 17 = 1 \times 12 + 5 \)
+3. \( 12 = 2 \times 5 + 2 \)
+4. \( 5 = 2 \times 2 + 1 \)
+5. \( 2 = 2 \times 1 + 0 \)
+
+Now, work backward:
+
+1. \( 1 = 5 - 2 \times 2 \)
+2. \( 1 = 5 - 2 \times (12 - 2 \times 5) = 5 \times 5 - 2 \times 12 \)
+3. \( 1 = 5 \times (17 - 12) - 2 \times 12 = 5 \times 17 - 7 \times 12 \)
+4. \( 1 = 5 \times 17 - 7 \times (29 - 17) = 12 \times 17 - 7 \times 29 \)
+
+Thus, \( 12 \times 17 \equiv 1 \mod 29 \), so the inverse of 17 modulo 29 is 12.
+
+**Step 2: Multiply both sides of \( 17n \equiv 10 \mod 29 \) by 12.**
+
+Now, multiply both sides of the congruence by 12 (the inverse of 17 modulo 29):
+\[
+12 \times 17n \equiv 12 \times 10 \mod 29
+\]
+\[
+n \equiv 120 \mod 29
+\]
+Now, reduce 120 modulo 29:
+\[
+120 \div 29 = 4 \quad \text{(quotient)} \quad 120 - 4 \times 29 = 120 - 116 = 4
+\]
+Thus, \( n \equiv 4 \mod 29 \).
+
+So, the smallest positive integer \( n \) is \( \boxed{4} \).
+
+---
+
+### Part (ii): \( n \cdot 23 \equiv 7 \mod 68 \)
+
+We need to solve for \( n \) such that \( 23n \equiv 7 \mod 68 \).
+
+**Step 1: Find the inverse of 23 modulo 68.**
+
+We need to find the inverse of 23 modulo 68. We can use the **extended Euclidean algorithm**.
+
+1. \( 68 = 2 \times 23 + 22 \)
+2. \( 23 = 1 \times 22 + 1 \)
+3. \( 22 = 22 \times 1 + 0 \)
+
+So, \( \gcd(23, 68) = 1 \). Now, we work backwards:
+
+1. \( 1 = 23 - 1 \times 22 \)
+2. \( 1 = 23 - 1 \times (68 - 2 \times 23) = 3 \times 23 - 1 \times 68 \)
+
+Thus, \( 3 \times 23 \equiv 1 \mod 68 \), so the inverse of 23 modulo 68 is 3.
+
+**Step 2: Multiply both sides of \( 23n \equiv 7 \mod 68 \) by 3.**
+
+Now, multiply both sides of the congruence by 3 (the inverse of 23 modulo 68):
+\[
+3 \times 23n \equiv 3 \times 7 \mod 68
+\]
+\[
+n \equiv 21 \mod 68
+\]
+
+Thus, the smallest positive integer \( n \) is \( \boxed{21} \).
+
+---
+
+### Part (iii): \( n \cdot 123 \equiv 7 \mod 345 \)
+
+We need to solve for \( n \) such that \( 123n \equiv 7 \mod 345 \).
+
+**Step 1: Find the inverse of 123 modulo 345.**
+
+We use the **extended Euclidean algorithm** to find the inverse of 123 modulo 345.
+
+1. \( 345 = 2 \times 123 + 99 \)
+2. \( 123 = 1 \times 99 + 24 \)
+3. \( 99 = 4 \times 24 + 3 \)
+4. \( 24 = 8 \times 3 + 0 \)
+
+So, \( \gcd(123, 345) = 3 \), which is not 1, so **123 and 345 are not coprime**, and there is **no solution** for this congruence.
+
+---
+
+### Final Answers:
+- (i) The smallest positive integer \( n \) such that \( 17n \equiv 10 \mod 29 \) is \( \boxed{4} \).
+- (ii) The smallest positive integer \( n \) such that \( 23n \equiv 7 \mod 68 \) is \( \boxed{21} \).
+- (iii) There is **no solution** to \( 123n \equiv 7 \mod 345 \) because 123 and 345 are not coprime.
