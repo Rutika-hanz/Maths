@@ -1,0 +1,90 @@
+To verify Fermat's Little Theorem for the prime \( p = 11 \), we need to show that for every integer \( a \), where \( 0 \leq a \leq 10 \), and \( k \) ranging from 1 to 12, we have:
+
+\[
+a^k \equiv a \mod 11
+\]
+
+According to Fermat's Little Theorem, for a prime \( p \), if \( a \) is not divisible by \( p \), then \( a^{p-1} \equiv 1 \mod p \). For \( p = 11 \), we should have \( a^{10} \equiv 1 \mod 11 \) for \( a \neq 0 \), and \( a^1 \equiv a \mod 11 \) for all \( a \).
+
+The table of powers \( a^k \mod 11 \) for \( 0 \leq a \leq 10 \) and \( 1 \leq k \leq 12 \) can be generated using a simple SageMath script.
+
+### Sage Code:###################################################################3
+
+```python
+# Creating the table for a^k mod 11 for 0 <= a <= 10 and 1 <= k <= 12
+p = 11
+table = []
+
+for a in range(p):
+    row = [a**k % p for k in range(1, 13)]  # Compute a^k mod 11 for 1 <= k <= 12
+    table.append(row)
+
+# Display the table
+table_header = ["a\\k"] + [f"k={k}" for k in range(1, 13)]
+print(table_header)
+for i, row in enumerate(table):
+    print([i] + row)
+```
+#############################################################################333
+### Explanation:
+
+- The loop iterates over each integer \( a \) from 0 to 10.
+- For each value of \( a \), we compute \( a^k \mod 11 \) for \( k \) ranging from 1 to 12.
+- The table is then printed, where each row corresponds to a particular value of \( a \) and lists \( a^1 \mod 11, a^2 \mod 11, ..., a^{12} \mod 11 \).
+
+### Verifying Fermat's Little Theorem:
+
+Fermat’s Little Theorem states that for \( a \neq 0 \) and \( p = 11 \), we should have \( a^{10} \equiv 1 \mod 11 \). Checking the table, the 10th power for \( a \neq 0 \) should be congruent to 1 modulo 11, which will be confirmed when you run the above code.
+
+### Example Output:
+
+For each value of \( a \) (from 0 to 10), the values for \( a^1, a^2, ..., a^{12} \mod 11 \) will be calculated, and you can verify that:
+
+- For \( a = 1 \), \( 1^k \mod 11 = 1 \) for all \( k \).
+- For other values of \( a \neq 0 \), \( a^{10} \equiv 1 \mod 11 \), confirming Fermat's Little Theorem.
+
+Run this code in a SageMath environment or online SageMathCell to see the table and the verification for Fermat's Little Theorem.
+
+
+Here is the table of \( a^k \mod 11 \) for \( 0 \leq a \leq 10 \) and \( 1 \leq k \leq 12 \):
+
+\[
+\begin{array}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\text{a\textbackslash k} & k=1 & k=2 & k=3 & k=4 & k=5 & k=6 & k=7 & k=8 & k=9 & k=10 & k=11 & k=12 \\
+\hline
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+2 & 2 & 4 & 8 & 5 & 10 & 9 & 7 & 3 & 6 & 1 & 2 & 4 \\
+3 & 3 & 9 & 5 & 4 & 1 & 3 & 9 & 5 & 4 & 1 & 3 & 9 \\
+4 & 4 & 5 & 9 & 3 & 1 & 4 & 5 & 9 & 3 & 1 & 4 & 5 \\
+5 & 5 & 3 & 4 & 9 & 1 & 5 & 3 & 4 & 9 & 1 & 5 & 3 \\
+6 & 6 & 3 & 7 & 9 & 10 & 5 & 8 & 4 & 2 & 1 & 6 & 3 \\
+7 & 7 & 5 & 2 & 3 & 10 & 4 & 6 & 9 & 8 & 1 & 7 & 5 \\
+8 & 8 & 9 & 6 & 4 & 10 & 3 & 2 & 5 & 7 & 1 & 8 & 9 \\
+9 & 9 & 4 & 3 & 5 & 1 & 9 & 4 & 3 & 5 & 1 & 9 & 4 \\
+10 & 10 & 1 & 10 & 1 & 10 & 1 & 10 & 1 & 10 & 1 & 10 & 1 \\
+\hline
+\end{array}
+\]
+
+### Verifying Fermat's Little Theorem:
+Fermat’s Little Theorem states that for a prime \( p \), if \( a \) is an integer not divisible by \( p \), then:
+\[
+a^{p-1} \equiv 1 \mod p
+\]
+For \( p = 11 \), the theorem suggests that for \( a = 1, 2, 3, \dots, 10 \), \( a^{10} \equiv 1 \mod 11 \). 
+
+From the table:
+- For \( a = 1 \), \( 1^{10} \equiv 1 \mod 11 \)
+- For \( a = 2 \), \( 2^{10} \equiv 1 \mod 11 \)
+- For \( a = 3 \), \( 3^{10} \equiv 1 \mod 11 \)
+- For \( a = 4 \), \( 4^{10} \equiv 1 \mod 11 \)
+- For \( a = 5 \), \( 5^{10} \equiv 1 \mod 11 \)
+- For \( a = 6 \), \( 6^{10} \equiv 1 \mod 11 \)
+- For \( a = 7 \), \( 7^{10} \equiv 1 \mod 11 \)
+- For \( a = 8 \), \( 8^{10} \equiv 1 \mod 11 \)
+- For \( a = 9 \), \( 9^{10} \equiv 1 \mod 11 \)
+- For \( a = 10 \), \( 10^{10} \equiv 1 \mod 11 \)
+
+Thus, Fermat's Little Theorem holds true for all values of \( a \) from 1 to 10.
