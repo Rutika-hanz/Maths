@@ -1,0 +1,100 @@
+Code part =====
+# Part (i): Find 5322 mod 323 and check if 323 is prime
+a = 5322
+b = 323
+
+# Calculate 5322 mod 323
+mod_result_1 = a % b
+
+# Check if 323 is prime
+is_prime_1 = is_prime(b)
+
+# Part (ii): Find 22008 mod 2009 and check if 2009 is prime
+a2 = 22008
+b2 = 2009
+
+# Calculate 22008 mod 2009
+mod_result_2 = a2 % b2
+
+# Check if 2009 is prime
+is_prime_2 = is_prime(b2)
+
+# Output the results
+mod_result_1, is_prime_1, mod_result_2, is_prime_2
+
+Solving part ---------------------------------
+Let's break down the steps to solve these two parts:
+
+### Part (i): Determine \( 5322 \mod 323 \) and check if 323 is a prime number.
+
+#### Step 1: Find \( 5322 \mod 323 \)
+To find the remainder when \( 5322 \) is divided by \( 323 \), we perform the division:
+
+\[
+5322 \div 323 \approx 16.46 \quad \text{(take the integer part: 16)}
+\]
+
+Now, multiply the integer part by 323:
+
+\[
+16 \times 323 = 5168
+\]
+
+Then, subtract this result from 5322:
+
+\[
+5322 - 5168 = 154
+\]
+
+Thus, \( 5322 \mod 323 = 154 \).
+
+#### Step 2: Check if 323 is a prime number
+To check if 323 is prime, we need to check whether it is divisible by any prime number less than \( \sqrt{323} \approx 17.97 \). So, we check for divisibility by the primes less than 18: 2, 3, 5, 7, 11, 13, 17.
+
+- \( 323 \) is odd, so not divisible by 2.
+- The sum of digits of \( 323 \) is \( 3 + 2 + 3 = 8 \), which is not divisible by 3.
+- \( 323 \) does not end in 0 or 5, so it is not divisible by 5.
+- \( 323 \div 7 \approx 46.14 \), not an integer, so not divisible by 7.
+- \( 323 \div 11 \approx 29.36 \), not an integer, so not divisible by 11.
+- \( 323 \div 13 = 24.846 \), not an integer, so not divisible by 13.
+- \( 323 \div 17 = 19 \), which is an integer, so \( 323 = 17 \times 19 \).
+
+Thus, 323 is not a prime number. It is the product of \( 17 \) and \( 19 \).
+
+### Part (ii): Determine \( 22008 \mod 2009 \) and check if 2009 is a prime number.
+
+#### Step 1: Find \( 22008 \mod 2009 \)
+To find the remainder when \( 22008 \) is divided by \( 2009 \), we perform the division:
+
+\[
+22008 \div 2009 \approx 10.95 \quad \text{(take the integer part: 10)}
+\]
+
+Now, multiply the integer part by 2009:
+
+\[
+10 \times 2009 = 20090
+\]
+
+Then, subtract this result from 22008:
+
+\[
+22008 - 20090 = 1918
+\]
+
+Thus, \( 22008 \mod 2009 = 1918 \).
+
+#### Step 2: Check if 2009 is a prime number
+To check if 2009 is prime, we need to check whether it is divisible by any prime number less than \( \sqrt{2009} \approx 44.87 \). So, we check for divisibility by the primes less than 45: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43.
+
+- \( 2009 \) is odd, so not divisible by 2.
+- The sum of digits of \( 2009 \) is \( 2 + 0 + 0 + 9 = 11 \), which is not divisible by 3.
+- \( 2009 \) does not end in 0 or 5, so it is not divisible by 5.
+- \( 2009 \div 7 = 287 \), which is an integer, so \( 2009 = 7 \times 287 \).
+
+Thus, 2009 is not a prime number. It is the product of \( 7 \) and \( 287 \).
+
+### Summary of Results:
+
+1. \( 5322 \mod 323 = 154 \) and 323 is not a prime number (it is \( 17 \times 19 \)).
+2. \( 22008 \mod 2009 = 1918 \) and 2009 is not a prime number (it is \( 7 \times 287 \)).
