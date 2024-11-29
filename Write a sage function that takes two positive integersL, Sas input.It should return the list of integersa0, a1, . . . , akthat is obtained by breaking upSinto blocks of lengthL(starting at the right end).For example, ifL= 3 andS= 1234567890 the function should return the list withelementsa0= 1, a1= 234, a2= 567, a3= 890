@@ -1,0 +1,28 @@
+def break_into_blocks(L, S):
+    """
+    Breaks a number S into blocks of length L starting from the right.
+
+    Args:
+    - L (int): Length of each block.
+    - S (int): The number to be split into blocks.
+
+    Returns:
+    - List of integers representing the blocks.
+    """
+    if L <= 0 or S <= 0:
+        raise ValueError("Both L and S must be positive integers.")
+    
+    S_str = str(S)  # Convert S to a string for easier manipulation
+    blocks = []
+
+    while S_str:
+        blocks.append(int(S_str[-L:]))  # Take the last L digits
+        S_str = S_str[:-L]  # Remove the last L digits
+    
+    return blocks[::-1]  # Reverse the list to maintain the correct order
+
+# Example usage
+L = 3
+S = 1234567890
+result = break_into_blocks(L, S)
+print("Blocks:", result)
