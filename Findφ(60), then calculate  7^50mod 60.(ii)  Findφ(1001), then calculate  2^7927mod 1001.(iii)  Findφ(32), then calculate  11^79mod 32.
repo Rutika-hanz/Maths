@@ -1,0 +1,372 @@
+Here first To compute \( \varphi(1001) \), where \( \varphi \) is Euler's Totient function, we use the formula for the Euler's Totient function for a number \( n \) with prime factorization:
+
+\[
+\varphi(n) = n \left(1 - \frac{1}{p_1}\right) \left(1 - \frac{1}{p_2}\right) \cdots \left(1 - \frac{1}{p_k}\right)
+\]
+where \( p_1, p_2, \dots, p_k \) are the distinct prime factors of \( n \).
+
+Let's go step-by-step for \( n = 1001 \).
+
+### Step 1: Find the prime factorization of 1001
+First, we find the prime factorization of 1001:
+\[
+1001 = 7 \times 11 \times 13
+\]
+
+So, the prime factors of 1001 are \( 7 \), \( 11 \), and \( 13 \).
+
+### Step 2: Apply the Totient formula
+
+Now, we apply the Euler's Totient function formula:
+\[
+\varphi(1001) = 1001 \left(1 - \frac{1}{7}\right) \left(1 - \frac{1}{11}\right) \left(1 - \frac{1}{13}\right)
+\]
+
+### Step 3: Simplify the terms
+
+Let's calculate each part step-by-step:
+- \( 1 - \frac{1}{7} = \frac{6}{7} \)
+- \( 1 - \frac{1}{11} = \frac{10}{11} \)
+- \( 1 - \frac{1}{13} = \frac{12}{13} \)
+
+Now multiply these terms:
+\[
+\varphi(1001) = 1001 \times \frac{6}{7} \times \frac{10}{11} \times \frac{12}{13}
+\]
+
+### Step 4: Perform the multiplication
+
+First, simplify \( 1001 \times \frac{6}{7} \):
+\[
+1001 \times \frac{6}{7} = 858
+\]
+
+Then, multiply the result by \( \frac{10}{11} \):
+\[
+858 \times \frac{10}{11} = 780
+\]
+
+Finally, multiply by \( \frac{12}{13} \):
+\[
+780 \times \frac{12}{13} = 720
+\]
+
+Thus, \( \varphi(1001) = 720 \).
+
+### Conclusion:
+The value of \( \varphi(1001) \) is \( 720 \). This is why we reduced the exponent \( 7927 \) modulo \( 720 \) in the previous solution.
+#########################################################################################3
+To get the prime values for 1001 this code can be used 
+# Function to find the prime factorization of a number
+def prime_factorization(n):
+    return factor(n)
+
+# Test with a number, for example, 1001
+n = 1001
+prime_factors = prime_factorization(n)
+prime_factors
+
+then -------------------------------
+To solve \( 2^{7927} \mod 1001 \), we can use **modular exponentiation**. This method efficiently calculates large powers modulo a number.
+
+### Step-by-step approach:
+
+1. **Use Euler's Theorem:**
+   If \( \gcd(a, n) = 1 \), then by Euler's theorem, \( a^{\varphi(n)} \equiv 1 \mod n \), where \( \varphi(n) \) is the Euler's totient function of \( n \).
+
+   For \( n = 1001 \), we already computed earlier that:
+   \[
+   \varphi(1001) = 720
+   \]
+   This means that:
+   \[
+   2^{720} \equiv 1 \mod 1001
+   \]
+   Thus, we can reduce the exponent \( 7927 \) modulo \( 720 \).
+
+2. **Reduce the exponent:**
+   Since \( 7927 \) is larger than \( 720 \), reduce it modulo \( 720 \):
+   \[
+   7927 \mod 720 = 7927 - (11 \times 720) = 7927 - 7920 = 7
+   \]
+   Therefore, we need to compute:
+   \[
+   2^7 \mod 1001
+   \]
+
+3. **Calculate \( 2^7 \mod 1001 \):**
+   Now compute:
+   \[
+   2^7 = 128
+   \]
+   \[
+   128 \mod 1001 = 128
+   \]
+
+Thus, the solution to \( 2^{7927} \mod 1001 \) is:
+
+\[
+2^{7927} \mod 1001 = 128
+\]
+
+### Conclusion:
+The result of \( 2^{7927} \mod 1001 \) is \( \boxed{128} \).
+######################################################################################################33
+
+To calculate \( \varphi(32) \) and then find \( 11^{79} \mod 32 \), we can follow a similar procedure:
+
+### Step 1: Find \( \varphi(32) \)
+
+We begin by computing \( \varphi(32) \), where \( \varphi \) is Euler's Totient function.
+
+1. First, recognize that \( 32 = 2^5 \).
+2. The formula for \( \varphi(2^k) \) when \( k \) is a positive integer is:
+   \[
+   \varphi(2^k) = 2^k - 2^{k-1}
+   \]
+   This works because the powers of 2 are the only even numbers that don't contribute to the totient function. All the other numbers are coprime to powers of 2.
+
+3. So for \( 32 = 2^5 \), we apply the formula:
+   \[
+   \varphi(32) = 32 - 16 = 16
+   \]
+
+Thus, \( \varphi(32) = 16 \).
+
+### Step 2: Use Euler's Theorem to reduce the exponent
+
+Since \( \gcd(11, 32) = 1 \), we can apply **Euler's theorem** to reduce the exponent modulo \( \varphi(32) \). Euler's theorem tells us that:
+\[
+a^{\varphi(n)} \equiv 1 \mod n \quad \text{when} \quad \gcd(a, n) = 1
+\]
+Here \( a = 11 \) and \( n = 32 \), so:
+\[
+11^{16} \equiv 1 \mod 32
+\]
+Now, reduce the exponent \( 79 \) modulo \( \varphi(32) = 16 \):
+\[
+79 \mod 16 = 79 - (4 \times 16) = 79 - 64 = 15
+\]
+
+So, we need to compute \( 11^{15} \mod 32 \).
+
+### Step 3: Calculate \( 11^{15} \mod 32 \)
+
+Now, we calculate \( 11^{15} \mod 32 \) using **modular exponentiation**.
+
+We can use the method of successive squaring to calculate this.
+
+1. **Calculate \( 11^2 \mod 32 \):**
+   \[
+   11^2 = 121
+   \]
+   \[
+   121 \mod 32 = 121 - (3 \times 32) = 121 - 96 = 25
+   \]
+   So, \( 11^2 \equiv 25 \mod 32 \).
+
+2. **Calculate \( 11^4 \mod 32 \):**
+   \[
+   11^4 = (11^2)^2 = 25^2 = 625
+   \]
+   \[
+   625 \mod 32 = 625 - (19 \times 32) = 625 - 608 = 17
+   \]
+   So, \( 11^4 \equiv 17 \mod 32 \).
+
+3. **Calculate \( 11^8 \mod 32 \):**
+   \[
+   11^8 = (11^4)^2 = 17^2 = 289
+   \]
+   \[
+   289 \mod 32 = 289 - (9 \times 32) = 289 - 288 = 1
+   \]
+   So, \( 11^8 \equiv 1 \mod 32 \).
+
+4. **Calculate \( 11^{15} \mod 32 \):**
+   \[
+   11^{15} = 11^8 \times 11^4 \times 11^2 \times 11
+   \]
+   Using the previous results:
+   \[
+   11^8 \equiv 1 \mod 32, \quad 11^4 \equiv 17 \mod 32, \quad 11^2 \equiv 25 \mod 32
+   \]
+   \[
+   11^{15} \equiv 1 \times 17 \times 25 \times 11 \mod 32
+   \]
+   First, calculate \( 17 \times 25 \mod 32 \):
+   \[
+   17 \times 25 = 425
+   \]
+   \[
+   425 \mod 32 = 425 - (13 \times 32) = 425 - 416 = 9
+   \]
+   Now calculate \( 9 \times 11 \mod 32 \):
+   \[
+   9 \times 11 = 99
+   \]
+   \[
+   99 \mod 32 = 99 - (3 \times 32) = 99 - 96 = 3
+   \]
+   So, \( 11^{15} \equiv 3 \mod 32 \).
+
+### Conclusion:
+The result of \( 11^{79} \mod 32 \) is \( \boxed{3} \).
+
+In the expression \( 121 - (3 \times 32) \), the goal is to calculate \( 121 \mod 32 \). This is equivalent to finding the remainder when 121 is divided by 32.
+
+### Step-by-Step Explanation:
+1. **Divide 121 by 32**:
+   We want to divide 121 by 32 and find how many times 32 fits into 121, while ignoring the remainder. 
+   
+   \[
+   \frac{121}{32} \approx 3.78
+   \]
+   The integer part of this division is 3. This means that 32 can fit **3 times** into 121.
+
+2. **Multiply 32 by 3**:
+   To calculate the product:
+   \[
+   32 \times 3 = 96
+   \]
+
+3. **Subtract from 121**:
+   Now, subtract 96 from 121 to get the remainder:
+   \[
+   121 - 96 = 25
+   \]
+
+Thus, the remainder when 121 is divided by 32 is 25. Therefore:
+\[
+121 \mod 32 = 25
+\]
+
+### Conclusion:
+The \( (3 \times 32) \) in the solution corresponds to multiplying 32 by the integer part of the division, which is 3. This helps us find the remainder, which in this case is 25.
+####################################################3
+Code for solving  11^{79}mod 32 is {3}.
+def modular_exponentiation(base, exponent, mod):
+    result = 1
+    base = base % mod  # Ensure base is within mod
+    while exponent > 0:
+        # If exponent is odd, multiply base with the result
+        if exponent % 2 == 1:
+            result = (result * base) % mod
+        # Square the base
+        base = (base * base) % mod
+        # Reduce exponent by half
+        exponent = exponent // 2
+    return result
+
+# Define values
+base = 11
+exponent = 79
+mod = 32
+
+# Calculate 11^79 mod 32
+result = modular_exponentiation(base, exponent, mod)
+print(f"11^79 mod 32 = {result}")
+
+##########################################33
+Here's a detailed step-by-step solution for computing \( 11^{79} \mod 32 \):
+
+### Step 1: Use Euler's Theorem to Simplify the Exponent
+
+We start by calculating \( \varphi(32) \) (Euler's totient function of 32) and simplifying the exponent.
+
+1. **Find \( \varphi(32) \)**: 
+   Since \( 32 = 2^5 \), the formula for Euler’s totient function is:
+   \[
+   \varphi(32) = 32 - 16 = 16
+   \]
+   (because for powers of 2, \( \varphi(2^k) = 2^k - 2^{k-1} \)).
+
+2. **Apply Euler’s Theorem**: 
+   Since \( \gcd(11, 32) = 1 \), Euler’s theorem tells us:
+   \[
+   11^{16} \equiv 1 \mod 32
+   \]
+   Therefore, we can reduce the exponent modulo \( \varphi(32) = 16 \).
+
+3. **Reduce the Exponent Modulo 16**:
+   \[
+   79 \mod 16 = 79 - 4 \times 16 = 79 - 64 = 15
+   \]
+   So, \( 11^{79} \equiv 11^{15} \mod 32 \).
+
+### Step 2: Use Successive Squaring to Compute \( 11^{15} \mod 32 \)
+
+Now, we calculate \( 11^{15} \mod 32 \) using the method of **successive squaring**. The idea is to break down the exponentiation into smaller steps using the properties of moduli.
+
+1. **Compute \( 11^2 \mod 32 \)**:
+   \[
+   11^2 = 121
+   \]
+   \[
+   121 \mod 32 = 121 - 3 \times 32 = 121 - 96 = 25
+   \]
+   So, \( 11^2 \equiv 25 \mod 32 \).
+
+2. **Compute \( 11^4 \mod 32 \)** (square \( 11^2 \mod 32 \)):
+   \[
+   11^4 = (11^2)^2 = 25^2 = 625
+   \]
+   \[
+   625 \mod 32 = 625 - 19 \times 32 = 625 - 608 = 17
+   \]
+   So, \( 11^4 \equiv 17 \mod 32 \).
+
+3. **Compute \( 11^8 \mod 32 \)** (square \( 11^4 \mod 32 \)):
+   \[
+   11^8 = (11^4)^2 = 17^2 = 289
+   \]
+   \[
+   289 \mod 32 = 289 - 9 \times 32 = 289 - 288 = 1
+   \]
+   So, \( 11^8 \equiv 1 \mod 32 \).
+
+### Step 3: Calculate \( 11^{15} \mod 32 \)
+
+Now, we can compute \( 11^{15} \mod 32 \) using the results from the previous steps.
+
+\[
+11^{15} = 11^8 \times 11^4 \times 11^2 \times 11
+\]
+Using the results:
+\[
+11^8 \equiv 1 \mod 32, \quad 11^4 \equiv 17 \mod 32, \quad 11^2 \equiv 25 \mod 32
+\]
+\[
+11^{15} \equiv 1 \times 17 \times 25 \times 11 \mod 32
+\]
+
+Now, compute this step by step:
+
+1. **Calculate \( 17 \times 25 \mod 32 \)**:
+   \[
+   17 \times 25 = 425
+   \]
+   \[
+   425 \mod 32 = 425 - 13 \times 32 = 425 - 416 = 9
+   \]
+   So, \( 17 \times 25 \equiv 9 \mod 32 \).
+
+2. **Multiply the result by 11**:
+   \[
+   9 \times 11 = 99
+   \]
+   \[
+   99 \mod 32 = 99 - 3 \times 32 = 99 - 96 = 3
+   \]
+   So, \( 9 \times 11 \equiv 3 \mod 32 \).
+
+Thus, \( 11^{15} \equiv 3 \mod 32 \).
+
+### Final Result:
+
+\[
+11^{79} \equiv 11^{15} \equiv 3 \mod 32
+\]
+
+### Conclusion:
+The result of \( 11^{79} \mod 32 \) is \( \boxed{3} \).
