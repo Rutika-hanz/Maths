@@ -1,0 +1,81 @@
+To solve these modular exponentiation problems using **successive squaring**, we break down the exponentiation process into steps, using the method of repeatedly squaring and reducing modulo 101.
+
+Let's go through each one step by step.
+
+---
+
+### Part (i): \( 73^2 \mod 101 \)
+
+We want to calculate \( 73^2 \mod 101 \).
+
+**Step 1:** Start with the base: \( a = 73 \).
+
+**Step 2:** Square the base:
+\[
+73^2 = 5329
+\]
+
+**Step 3:** Reduce modulo 101:
+\[
+5329 \mod 101 = 5329 - (52 \times 101) = 5329 - 5252 = 77
+\]
+
+So, \( 73^2 \mod 101 = 77 \).
+
+---
+
+### Part (ii): \( 74^1 \mod 101 \)
+
+We want to calculate \( 74^1 \mod 101 \).
+
+Since it's just a single power, the calculation is straightforward:
+\[
+74^1 \mod 101 = 74
+\]
+
+So, \( 74^1 \mod 101 = 74 \).
+
+---
+
+### Part (iii): \( 7152^1 \mod 101 \)
+
+We want to calculate \( 7152^1 \mod 101 \).
+
+For \( 7152^1 \mod 101 \), we simply reduce 7152 modulo 101:
+\[
+7152 \mod 101 = 7152 - (70 \times 101) = 7152 - 7070 = 82
+\]
+
+So, \( 7152^1 \mod 101 = 82 \).
+
+---
+
+### Summary of Results:
+
+- \( 73^2 \mod 101 = 77 \)
+- \( 74^1 \mod 101 = 74 \)
+- \( 7152^1 \mod 101 = 82 \)
+
+If you prefer to implement this in **SageMath**, here's the code for these calculations:
+
+```sage ###################################Code
+
+# Part (i) 73^2 mod 101
+mod_result_1 = power_mod(73, 2, 101)
+
+# Part (ii) 74^1 mod 101
+mod_result_2 = power_mod(74, 1, 101)
+
+# Part (iii) 7152^1 mod 101
+mod_result_3 = power_mod(7152, 1, 101)
+
+# Output the results
+mod_result_1, mod_result_2, mod_result_3
+```
+
+This will output:
+- \( 73^2 \mod 101 \)
+- \( 74^1 \mod 101 \)
+- \( 7152^1 \mod 101 \)
+
+Let me know if you need more clarifications on the method!
