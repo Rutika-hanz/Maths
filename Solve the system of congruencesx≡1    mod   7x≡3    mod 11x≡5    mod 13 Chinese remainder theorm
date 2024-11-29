@@ -1,0 +1,105 @@
+
+To solve the system of congruences:
+
+\[
+\begin{aligned}
+x &\equiv 1 \mod 7, \\
+x &\equiv 3 \mod 11, \\
+x &\equiv 5 \mod 13,
+\end{aligned}
+\]
+
+we can use the **Chinese Remainder Theorem (CRT)**. The Chinese Remainder Theorem provides a way to solve systems of simultaneous congruences when the moduli are pairwise coprime (which they are in this case: 7, 11, and 13 are pairwise coprime).
+
+### Steps:
+
+1. **Rewrite the system:**
+
+We have the following system:
+
+\[
+x \equiv 1 \mod 7
+\]
+\[
+x \equiv 3 \mod 11
+\]
+\[
+x \equiv 5 \mod 13
+\]
+
+2. **Use the method of successive substitution** or directly apply the Chinese Remainder Theorem.
+
+The formula for the Chinese Remainder Theorem is:
+
+\[
+x = \sum_{i=1}^{n} a_i \cdot M_i \cdot m_i^{-1} \mod M
+\]
+
+where:
+- \( a_i \) are the remainders (1, 3, and 5 in this case),
+- \( M = \prod_{i=1}^{n} m_i \) is the product of the moduli (in this case, \( 7 \times 11 \times 13 \)),
+- \( M_i = \frac{M}{m_i} \),
+- \( m_i^{-1} \) is the modular inverse of \( M_i \) modulo \( m_i \).
+
+Now, let's go step by step.
+
+### Step 1: Compute the product \( M \)
+
+\[
+M = 7 \times 11 \times 13 = 1001
+\]
+
+### Step 2: Compute each \( M_i \)
+
+For each \( m_i \), we compute \( M_i = \frac{M}{m_i} \):
+
+- For \( m_1 = 7 \), \( M_1 = \frac{1001}{7} = 143 \),
+- For \( m_2 = 11 \), \( M_2 = \frac{1001}{11} = 91 \),
+- For \( m_3 = 13 \), \( M_3 = \frac{1001}{13} = 77 \).
+
+### Step 3: Find the modular inverses \( m_i^{-1} \)
+
+We need to compute the modular inverse of each \( M_i \) modulo \( m_i \), i.e., we need to find \( m_i^{-1} \) such that:
+
+\[
+M_i \cdot m_i^{-1} \equiv 1 \mod m_i
+\]
+
+- For \( M_1 = 143 \mod 7 \), we need to find the inverse of 143 modulo 7. \( 143 \equiv 3 \mod 7 \), and the inverse of 3 modulo 7 is 5. Thus, \( m_1^{-1} = 5 \).
+  
+- For \( M_2 = 91 \mod 11 \), we need to find the inverse of 91 modulo 11. \( 91 \equiv 3 \mod 11 \), and the inverse of 3 modulo 11 is 4. Thus, \( m_2^{-1} = 4 \).
+  
+- For \( M_3 = 77 \mod 13 \), we need to find the inverse of 77 modulo 13. \( 77 \equiv 12 \mod 13 \), and the inverse of 12 modulo 13 is 12. Thus, \( m_3^{-1} = 12 \).
+
+### Step 4: Apply the Chinese Remainder Theorem formula
+
+Now, we can substitute into the formula:
+
+\[
+x = (1 \cdot 143 \cdot 5) + (3 \cdot 91 \cdot 4) + (5 \cdot 77 \cdot 12) \mod 1001
+\]
+
+Now calculate each term:
+
+- \( 1 \cdot 143 \cdot 5 = 715 \)
+- \( 3 \cdot 91 \cdot 4 = 1092 \)
+- \( 5 \cdot 77 \cdot 12 = 4620 \)
+
+Now, sum them:
+
+\[
+x = 715 + 1092 + 4620 = 6427
+\]
+
+Finally, reduce modulo 1001:
+
+\[
+6427 \mod 1001 = 6427 - (6 \times 1001) = 6427 - 6006 = 421
+\]
+
+### Final Answer:
+The solution to the system of congruences is:
+
+\[
+x \equiv 421 \mod 1001
+\]
